@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-23T09:38:50 ART" name="Default suite" finished-at="2022-05-23T09:39:21 ART" duration-ms="30897">
+    <groups>
+    </groups>
+    <test started-at="2022-05-23T09:38:50 ART" name="Default test" finished-at="2022-05-23T09:39:21 ART" duration-ms="30897">
+      <class name="DespegarTest">
+        <test-method signature="ValidarSeleccionDespegar()[pri:0, instance:DespegarTest@158d2680]" started-at="2022-05-23T09:38:50 ART" name="ValidarSeleccionDespegar" description="Validar la carga de un destino con pasajeros" finished-at="2022-05-23T09:39:21 ART" duration-ms="30867" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidarSeleccionDespegar -->
+      </class> <!-- DespegarTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
