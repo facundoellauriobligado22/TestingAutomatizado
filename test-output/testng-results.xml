@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-23T09:38:50 ART" name="Default suite" finished-at="2022-05-23T09:39:21 ART" duration-ms="30897">
+  <suite started-at="2022-05-31T10:46:13 ART" name="Default suite" finished-at="2022-05-31T10:46:28 ART" duration-ms="14739">
     <groups>
     </groups>
-    <test started-at="2022-05-23T09:38:50 ART" name="Default test" finished-at="2022-05-23T09:39:21 ART" duration-ms="30897">
+    <test started-at="2022-05-31T10:46:13 ART" name="Default test" finished-at="2022-05-31T10:46:28 ART" duration-ms="14739">
       <class name="DespegarTest">
-        <test-method signature="ValidarSeleccionDespegar()[pri:0, instance:DespegarTest@158d2680]" started-at="2022-05-23T09:38:50 ART" name="ValidarSeleccionDespegar" description="Validar la carga de un destino con pasajeros" finished-at="2022-05-23T09:39:21 ART" duration-ms="30867" status="PASS">
+        <test-method signature="ValidarSeleccionDespegar()[pri:0, instance:DespegarTest@158d2680]" started-at="2022-05-31T10:46:13 ART" name="ValidarSeleccionDespegar" description="Validar la carga de un destino con pasajeros" finished-at="2022-05-31T10:46:28 ART" duration-ms="14700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidarSeleccionDespegar -->
