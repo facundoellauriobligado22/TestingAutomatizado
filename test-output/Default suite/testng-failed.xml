@@ -6,7 +6,7 @@
       <class name="com.selenium.test1.DespegarTest">
         <methods>
           <include name="FinishTest"/>
-          <include name="testHome"/>
+          <include name="testHome" invocation-numbers="1 2"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.selenium.test1.DespegarTest -->

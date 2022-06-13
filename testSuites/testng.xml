@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+<parameter name="URLDespegar" value="https://www.despegar.com.ar"></parameter>
+  <test thread-count="5" preserve-order="true" name="Test">
+  <groups>
+  	<run>
+  	<include name="despegarTest"></include>
+  	</run>
+  </groups>
+  <classes>
+  <class name="com.selenium.test1.DespegarTest"></class>
+  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

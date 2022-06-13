@@ -1,5 +1,8 @@
 package com.selenium.pages;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +11,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class DespegarHomePage {
 	//Inicializo el driver.
 	private WebDriver driver;
 	//Acá llamo a todos los elementos html con su correspondiente path.
 	
-	@FindBy(css = "a.lgpd-banner--button")
+	@FindBy(css = "a.lgpd-banner--button.eva-3-btn.-white.-md")
     private WebElement buttonEntendiCookies;
 	
 	@FindBy(css = ".header-products-container [href='//www.despegar.com.ar/hoteles/']" )
@@ -47,6 +51,8 @@ public class DespegarHomePage {
 	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened'] //div[@class='stepper__room__row'] [2]//button[@class='steppers-icon-right stepper__icon']")
 	private WebElement botonAumentarMenor;
   
+	@FindBy(css = "div.select__row__options__container select option.select-option")
+	private WebElement edades;
 	
 	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened'] //div[@class='stepper__room__row'] [3]//select[@class='select'] //option[@value='8'] ")
 	private WebElement botonSeleccionarEdad;  
@@ -64,15 +70,17 @@ public class DespegarHomePage {
 	public void IngresaraAlojamientos() {
 		BotonAlojamiento.click();
 	}
-	public void SeleccionarUnDestino() throws InterruptedException {
+	public void SeleccionarUnDestino(String ciudad) throws InterruptedException {
 		botonDestino.click();
-		botonDestino.sendKeys("Córdoba, Córdoba");
+		botonDestino.sendKeys(ciudad);
 		Thread.sleep(1000);
 		botonDestino.sendKeys(Keys.CONTROL);
 		Thread.sleep(1000);
 		botonDestino.sendKeys(Keys.ENTER);
 	}
 	public void SeleccionarFechas() {
+		wait.until(ExpectedConditions.visibilityOf(buttonEntendiCookies));
+		buttonEntendiCookies.click();
 		wait.until(ExpectedConditions.visibilityOf(fechaEntrada));
 		fechaEntrada.click();
 		wait.until(ExpectedConditions.visibilityOf(flechaDerecha));
@@ -92,12 +100,19 @@ public class DespegarHomePage {
 		botonAumentarAdulto.click();
 		wait.until(ExpectedConditions.visibilityOf(botonAumentarMenor));
 		botonAumentarMenor.click();
+
+	}
+	public void Lista() {
+		List<WebElement> listaEdades = driver.findElements(By.cssSelector("div.select__row__options__container select option.select-option"));
+		for(WebElement elemento : listaEdades) {
+			Assert.assertTrue(elemento.isDisplayed(), "El elemento no es visible.");
+		}
 		wait.until(ExpectedConditions.visibilityOf(botonSeleccionarEdad));
 		botonSeleccionarEdad.click();
-		wait.until(ExpectedConditions.visibilityOf(botonBusqueda));
-		botonBusqueda.click();
 	}
 	public DespegarResultPage DespegarResultPage() {
+		wait.until(ExpectedConditions.visibilityOf(botonBusqueda));
+		botonBusqueda.click();
 		return new DespegarResultPage(this.driver);
 	}
 }
